@@ -1,0 +1,96 @@
+// Sizing
+$spacer: 1rem
+$spacers: (0: 0, 1: ($spacer * .5), 2: $spacer, 3: ($spacer * 2), 4: ($spacer * 4), 5: ($spacer * 6))
+$spacers: map-merge($spacers, $spacers)
+
+$sizes: (25: 25%, 50: 50%, 75: 75%, 100: 100%, auto: auto)
+$sizes: map-merge($sizes, $sizes)
+
+$sizeVariants: (xs: .5, sm: .75, md: 1, lg: 1.25, xl: 1.5, xxl: 2)
+$sizeVariants: map-merge($sizeVariants, $sizeVariants)
+
+$stateVariants: ("info": "gray", "positive": "positive", "warning": "negative", "alert": "alert")
+$stateVariants: map-merge($stateVariants, $stateVariants)
+
+// Grid
+$gridBreakpoints: (xs: 0, sm: 599px, md: 768px, lg: 992px, xl: 1200px)
+$containerMaxWidths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px)
+$gridColumns: 10 !default
+$gridGutterWidth: 1rem !default
+$gridRowColumns:  5 !default
+
+$wrapS: 56.25rem   //900px
+$wrapM: 75rem      //1200px
+$wrapL: 100rem     //1600px
+$wrap:  $wrapM
+
+// Typography
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap')
+
+$fontDefault: "Poppins", sans-serif
+$fontHeading: "Poppins", sans-serif
+$fontMonospace: "Space Mono", monospace
+
+// Font-size
+$fontSizes: ("extraSmall": .75rem, "small": .825rem, "normal": 1rem, "medium": 1.5rem, "large": 2rem, "extraLarge": 3rem, "ultraLarge": 4rem)
+$fontSizes: map-merge($fontSizes, $fontSizes)
+
+// Font-weight
+$fontWeights: ("extraLight": 200, "light": 300, "regular": 400, "medium": 500, "bold": 700, "black": 900)
+$fontWeights: map-merge($fontWeights, $fontWeights)
+
+// Line-height
+$lineHeights: ("small": .75, "normal": 1, "medium": 1.25, "large": 1.5)
+$lineHeights: map-merge($lineHeights, $lineHeights)
+
+// Colors
+$themeColors: ("primary": #362f73, "secondary": #dbff00, "positive": #00dc82, "negative": #eb1b56, "alert": #ffcd10, "white": #fff, "black": #000, "gray": #adb5bd, "light": #b9b9b9, "dark": #000, "typography": #4f4f4f)
+$themeColors: map-merge($themeColors, $themeColors)
+
+$grays: ("100": #f8f9fa, "250": #dee2e6, "500": #adb5bd, "750": #495057)
+$grays: map-merge($grays, $grays)
+
+@import 'functions'
+
+// Body
+$pageBg: map-get($themeColors, "white")
+$bodyColor: map-get($themeColors, "typography")
+$linkColor: map-get($themeColors, "primary")
+$linkDecoration: none
+$linkHoverDecoration: underline
+
+// Z-index master
+$zIndexSticky: 10
+$zIndexFixed: 10
+$zIndexModal: 20
+
+// Buttons
+$buttonOutlined: false
+
+// Buttons - default
+$buttonTextSize: 1rem
+$buttonTextWeight: map-get($fontWeights, "regular")
+$buttonTextDecoration: none
+$buttonTextTransform: none
+$buttonBorderRadius: .25rem
+
+// Checkbox / Radio - default
+$checkboxColor: map-get($themeColors, "primary")
+$checkboxTextColor: map-get($themeColors, "typography")
+$checkboxTextSize: .825rem
+$checkboxTextWeight: map-get($fontWeights, "regular")
+$checkboxBorderRadius: .25rem
+
+// Footer
+$footerStyle: background
+$footerHeight: "4 , 6"
+$footerBackgroundColor: map-get($themeColors, "dark")
+$footerCopyrightTextColor: map-get($themeColors, "white")
+$footerCopyrightTextSize: .825rem
+$footerCopyrightTextWeight: map-get($fontWeights, "regular")
+$footerCopyrightTextTransform: none
+$footerBorderSize: .15rem
+$footerBorderColor: map-get($themeColors, "lights")
+
+@import 'mixins'

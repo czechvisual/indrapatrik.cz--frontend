@@ -1,0 +1,719 @@
+// modal - style
+$cc-bg: #fff
+$cc-text: hsl(208, 15%, 12%)
+$cc-btn-primary-bg: map-get($themeColors, "primary")
+$cc-btn-primary-text: var($cc-bg)
+$cc-btn-primary-hover-bg: darken(map-get($themeColors, "primary"), 20%)
+$cc-btn-secondary-bg: #fff
+$cc-btn-secondary-text: var($cc-text)
+$cc-btn-secondary-hover-bg: hsl(208, 16%, 89%)
+
+// dialog - style
+$cc-cm-bg: #fff
+$cc-cm-text: hsl(208, 15%, 12%)
+$cc-cm-btn-primary-bg: map-get($themeColors, "primary")
+$cc-cm-btn-primary-text: var($cc-bg)
+$cc-cm-btn-primary-hover-bg: darken(map-get($themeColors, "primary"), 20%)
+$cc-cm-btn-secondary-bg: #fff
+$cc-cm-btn-secondary-text: var($cc-cm-text)
+$cc-cm-btn-secondary-hover-bg: hsl(208, 16%, 89%)
+
+// components - style
+$cc-toggle-bg-off: hsl(208, 16%, 89%)
+$cc-toggle-bg-on: var($cc-btn-primary-bg)
+$cc-toggle-bg-readonly: #d5dee2
+$cc-toggle-knob-bg: #fff
+$cc-toggle-knob-icon-color: #ecf2fa
+$cc-block-text: var($cc-text)
+$cc-cookie-category-block-bg: #f0f4f7
+$cc-cookie-category-block-bg-hover: #e9eff4
+$cc-section-border: #f1f3f5
+$cc-cookie-table-border: #e9edf2
+$cc-overlay-bg: rgba(4, 6, 8, .85)
+$cc-webkit-scrollbar-bg: #cfd5db
+$cc-webkit-scrollbar-bg-hover: #9199a0
+
+#cm
+  background: #fff
+  background: $cc-cm-bg
+  bottom: 1.25em
+  box-shadow: 0 .625em 1.875em rgba(2, 2, 3, .28)
+  font-family: inherit
+  line-height: normal
+  max-width: 24.2em
+  opacity: 0
+  padding: 1.1em 1.5em 1.4em
+  position: fixed
+  right: 1.25em
+  transform: scale(.95)
+  visibility: hidden
+  width: 100%
+  z-index: 990
+
+  a
+    color: $cc-cm-text !important
+
+  button
+    &:first-of-type
+      background: $cc-cm-btn-primary-bg !important
+      color: $cc-cm-btn-primary-text !important
+
+      &:hover
+        background: $cc-cm-btn-primary-hover-bg !important
+
+  &.bar
+    border-radius: 0
+    bottom: 0
+    left: 0
+    max-width: 100%
+    padding: 2em
+    position: fixed
+    right: 0
+    width: 100%
+
+    &.slide
+      transform: translateY(100%)
+    &.bottom
+      bottom: 0
+  &.bottom
+    bottom: 1em
+    top: auto
+
+#cm
+  button
+    background: $cc-cm-btn-secondary-bg !important
+    color: $cc-cm-btn-secondary-text !important
+
+    &:hover
+      background: $cc-cm-btn-secondary-hover-bg !important
+
+//styles
+.cc_div
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-rendering: optimizeLegibility
+  color: $cc-text
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol
+  font-size: 16px
+  font-weight: 400
+
+  a
+    border-bottom: 1px solid
+
+    &:hover
+      border-color: transparent
+      text-decoration: none
+
+  .c-bn
+    background: #e5ebef
+    background: $cc-btn-secondary-bg
+    border-radius: 4px
+    color: $cc-btn-secondary-text
+    cursor: pointer
+    display: inline-block
+    flex: 1
+    font-size: .82em
+    padding: 1em 1.7em
+    text-align: center
+    -moz-user-select: none
+    -khtml-user-select: none
+    -webkit-user-select: none
+    -o-user-select: none
+    user-select: none
+
+  .b-tg
+    right: 1.1em
+    transform: scale(1.1)
+
+    .c-tgl
+      border: 0
+      display: block
+      left: 0
+      margin: 0
+
+      &:disabled
+        cursor: not-allowed
+
+      &:checked
+        & ~ .c-tg
+          background: $cc-toggle-bg-on
+
+          &:after
+            transform: translateX(1.9em)
+
+          .on-i
+            opacity: 1
+
+          .off-i
+            opacity: 0
+
+      & ~ .c-tg
+        &.c-ro
+          background: $cc-toggle-bg-readonly
+
+          &:after
+            box-shadow: none
+
+    .c-tg
+      background: $cc-toggle-bg-off
+      pointer-events: none
+      position: absolute
+      transition: background-color .25s ease, box-shadow .25s ease
+
+      &.c-ro
+        cursor: not-allowed
+
+      &:after
+        background: $cc-toggle-knob-bg
+        border: none
+        border-radius: 100%
+        box-shadow: 0 1px 2px rgba(24, 32, 35, .36)
+        box-sizing: content-box
+        content: ""
+        display: block
+        height: 1.25em
+        left: .125em
+        position: relative
+        top: .125em
+        transition: transform .25s ease
+        width: 1.25em
+
+  .cc-link
+    border-bottom: 1px solid #253b48
+    border-color: $cc-text
+    color: $cc-btn-primary-bg
+    cursor: pointer
+    display: inline
+    font-weight: 600
+    padding-bottom: 0
+    text-decoration: none
+
+  span
+    &.t-lb
+      opacity: 0
+      overflow: hidden
+      pointer-events: none
+      position: absolute
+      top: 0
+      z-index: -1
+
+  .act
+    .b-bn
+      .b-tl
+        &:before
+          transform: translateY(-20%) rotate(225deg)
+
+  .on-i
+    left: 0
+    opacity: 0
+
+    &:before
+      border: solid #fff
+      border-color: $cc-toggle-knob-icon-color
+      border-width: 0 2px 2px 0
+      display: inline-block
+      left: .75em
+      padding: .1em .1em .45em
+      top: .37em
+
+  .off-i
+    &:before
+      transform: rotate(45deg)
+
+    &:after
+      transform: rotate(-45deg)
+
+  .bar
+    #c-s-in
+      height: 100%
+      max-height: 100%
+      top: 0
+      transform: none
+
+    #cs
+      padding: 0
+
+    #s-inr
+      border-radius: 0
+      margin: 0 0 0 auto
+      max-width: 32em
+      max-width: 100%
+      width: 100%
+
+    &.left
+      #s-inr
+        margin-left: 0
+        margin-right: auto
+
+    #s-bl
+      thead
+        tr
+          left: -9999px
+          position: absolute
+          top: -9999px
+
+      tr
+        border-top: 1px solid #e3e7ed
+        border-color: $cc-cookie-table-border
+
+      td
+        border: none
+        padding-left: 35%
+        position: relative
+
+        &:before
+          color: $cc-text
+          content: attr(data-column)
+          left: 1em
+          overflow: hidden
+          padding-right: .625em
+          position: absolute
+          text-overflow: ellipsis
+          white-space: nowrap
+
+  .bns-t
+    .c-bn
+      font-size: .83em
+      padding: .9em 1.6em
+
+  &.ie
+    .bar
+      #c-vln
+        padding-top: 0
+
+      #cs
+        margin-top: 0
+        max-height: 100%
+
+      #s-bl
+        td
+          padding: .8em .625em .8em 1.2em
+
+          &:before
+            display: none
+
+        thead
+          tr
+            position: relative
+
+    #cs
+      margin-top: -5.625em
+      max-height: 37.5em
+      position: relative
+      top: 0
+
+    #cm
+      border: 1px solid #dee6e9
+
+    #c-s-in
+      top: 0
+
+    .b-tg
+      margin-bottom: .7em
+      padding-left: 1em
+
+      .c-tgl
+        display: inline-block
+        height: auto
+        margin-bottom: .2em
+        position: relative
+        vertical-align: middle
+
+        &:checked
+          & ~ .c-tg
+            &:after
+              left: 1.95em
+
+      .c-tg
+        display: none
+
+      .t-lb
+        filter: alpha(opacity=0)
+
+    #s-bl
+      table
+        overflow: auto
+
+    #s-cnt
+      .b-bn
+        .b-tl
+          padding: 1.3em 6.4em 1.3em 1.4em
+
+#c-ttl, #s-bl td:before, #s-ttl, .cc_div .b-tl, .cc_div .c-bn
+  font-weight: 600
+
+#cm, #s-bl .act .b-acc, #s-inr, .cc_div .b-tl, .cc_div .c-bl
+  border-radius: .35em
+
+#s-bl
+  outline: none
+  display: block
+  height: 100%
+  overflow-x: hidden
+  overflow-y: auto
+  padding: 1.3em 1.8em
+  width: 100%
+
+  .act
+    .b-acc
+      border-top-left-radius: 0
+      border-top-right-radius: 0
+      display: block
+      max-height: 100%
+      overflow: hidden
+
+  .title
+    margin-top: 1.4em
+
+  .b-acc
+    display: none
+    margin-bottom: 0
+    max-height: 0
+    overflow: hidden
+    padding-top: 0
+
+    .p
+      margin-top: 0
+      padding: 1em
+
+  .b-bn
+    position: relative
+
+  .c-bl
+    border: 1px solid #f1f3f5
+    border-color: $cc-section-border
+    margin-bottom: .5em
+    padding: 1em
+    transition: background-color .25s ease
+
+    &:hover
+      background: $cc-cookie-category-block-bg
+
+    &:last-child
+      margin-bottom: .5em
+
+    &:first-child
+      border: none
+      margin-bottom: 2em
+      margin-top: 0
+      padding: 0
+      transition: none
+
+    &:not(.b-ex):first-child
+      &:hover
+        background: transparent
+        background: unset
+
+    &.b-ex
+      background: $cc-cookie-category-block-bg
+      border: none
+      padding: 0
+      transition: none
+
+      & + .c-bl
+        margin-top: 2em
+
+        &.b-ex
+          margin-top: 0
+
+      &:first-child
+        margin-bottom: 1em
+        margin-bottom: .5em
+
+  &::-webkit-scrollbar-thumb
+    background: $cc-webkit-scrollbar-bg
+    border: .25em solid var($cc-bg)
+    border-radius: 100em
+
+    &:hover
+      background: #9199a0
+      background: $cc-webkit-scrollbar-bg-hover
+
+  &::-webkit-scrollbar-button
+    height: 5px
+    width: 10px
+
+  tbody
+    tr
+      transition: background-color .25s ease
+
+      &:hover
+        background: #e9eff4
+        background: $cc-cookie-category-block-bg-hover
+
+  table
+    border-collapse: collapse
+    margin: 0
+    overflow: hidden
+    padding: 0
+    text-align: left
+    width: 100%
+    width: 100%
+
+  th
+    font-family: inherit
+    padding: 1.2em
+
+  thead
+    tr
+      left: -9999px
+      position: absolute
+      top: -9999px
+
+      &:first-child
+        border-bottom: 1px solid #e9edf2
+        border-color: $cc-cookie-table-border
+
+  tr
+    border-top: 1px solid #e3e7ed
+    border-color: $cc-cookie-table-border
+
+  td
+    border: none
+    padding-left: 35%
+    position: relative
+
+    &:before
+      color: #000
+      color: $cc-text
+      content: attr(data-column)
+      left: 1em
+      overflow: hidden
+      padding-right: .625em
+      position: absolute
+      text-overflow: ellipsis
+      white-space: nowrap
+
+.cc_div a, .cc_div button, .cc_div input
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  overflow: hidden
+
+#cm-ov, #cs-ov, .c--anim #cm, .c--anim #s-cnt, .c--anim #s-inr
+  transition: visibility .25s linear, opacity .25s ease, transform .25s ease !important
+
+.c--anim
+  .c-bn
+    transition: background-color .25s ease !important
+
+.c--anim #cm.bar.slide, .c--anim #cm.bar.slide + #cm-ov, .c--anim .bar.slide #s-inr, .c--anim .bar.slide + #cs-ov
+  transition: visibility .4s ease, opacity .4s ease, transform .4s ease !important
+
+#cm.bar.slide, .cc_div .bar.slide #s-inr
+  opacity: 1
+  transform: translateX(100%)
+
+#cm.bar.top.slide, .cc_div .bar.left.slide #s-inr
+  opacity: 1
+  transform: translateX(-100%)
+
+#cm.slide, .cc_div .slide #s-inr
+  transform: translateY(1.6em)
+
+.show--consent .c--anim #cm, .show--consent .c--anim #cm.bar, .show--settings .c--anim #s-inr, .show--settings .c--anim .bar.slide #s-inr
+  opacity: 1
+  transform: scale(1)
+  visibility: visible !important
+
+.show--consent .c--anim #cm.box.middle, .show--consent .c--anim #cm.cloud.middle
+  transform: scale(1) translateY(-50%)
+
+.show--settings
+  .c--anim
+    #s-cnt
+      visibility: visible !important
+
+.force--consent.show--consent .c--anim #cm-ov, .show--settings .c--anim #cs-ov
+  opacity: 1 !important
+  visibility: visible !important
+
+#cc_div
+  #cm
+    display: block !important
+
+#c-ttl
+  font-size: 1.05em
+  margin-bottom: .7em
+
+.cloud
+  #c-ttl
+    margin-top: -.15em
+
+#c-txt
+  font-size: .9em
+  line-height: 1.5em
+
+#c-bns button + button, #s-c-bn, #s-cnt button + button
+  float: right
+  margin-left: 1em
+
+#s-cnt
+  display: table
+  height: 100%
+  left: 0
+  position: fixed
+  top: 0
+  visibility: hidden
+  width: 100%
+  z-index: 999
+
+  #s-rall-bn
+    float: none
+    margin-left: 0
+
+  .b-bn
+    .b-tl
+      background: none
+      display: block
+      font-family: inherit
+      font-size: .95em
+      padding: 1.3em 6.4em 1.3em 2.7em
+      position: relative
+      transition: background-color .25s ease
+      width: 100%
+      padding-bottom: 1.2em
+      padding-top: 1.2em
+
+      &.exp
+        cursor: pointer
+
+  .act
+    .b-bn
+      .b-tl
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+
+  .p
+    color: #2d4156
+    color: $cc-block-text
+    font-size: .9em
+    line-height: 1.5em
+    margin-top: .85em
+
+#cm .c_link:active, #cm .c_link:hover, #s-c-bn:active, #s-c-bn:hover, #s-cnt button + button:active, #s-cnt button + button:hover
+  background: #d8e0e6
+  background: $cc-btn-secondary-hover-bg
+
+#s-bl .b-bn, #s-bl .title:first-child
+  margin-top: 0
+
+#s-cnt .b-bn .b-tl:active, #s-cnt .b-bn .b-tl:hover
+  background: #e9eff4
+  background: $cc-cookie-category-block-bg-hover
+
+#c-vln
+  display: table-cell
+  position: relative
+  vertical-align: middle
+
+#cs
+  bottom: 0
+  left: 0
+  padding: 0 1.7em
+  position: fixed
+  right: 0
+  top: 0
+  width: 100%
+  border-radius: 0
+  padding: 0
+
+#cs, #s-inr
+  height: 100%
+
+#s-bns, #s-hdr, #s-inr
+  background: #fff
+  background: var($cc-bg)
+
+#s-bns
+  border-top: 1px solid $cc-section-border
+  bottom: 0
+  height: 4.75em
+  left: 0
+  padding: 1em 1.8em
+  position: absolute
+  right: 0
+
+.cc_div .cc-link:active, .cc_div .cc-link:hover
+  border-color: transparent
+
+#c-bns button:first-child, #s-bns button:first-child
+  background: #253b48
+  background: $cc-btn-primary-bg
+  color: #fff
+  color: $cc-btn-primary-text
+
+#c-bns
+  &.swap
+    button
+      &:first-child
+        background: #e5ebef
+        background: $cc-btn-secondary-bg
+        color: #40505a
+        color: $cc-btn-secondary-text
+
+      &:last-child
+        background: #253b48
+        background: $cc-btn-primary-bg
+        color: #fff
+        color: $cc-btn-primary-text
+
+#c-bns button:first-child:active, #c-bns button:first-child:hover, #c-bns.swap button:last-child:active, #c-bns.swap button:last-child:hover, #s-bns button:first-child:active, #s-bns button:first-child:hover
+  background: #1d2e38
+  background: $cc-btn-primary-hover-bg
+
+#c-bns.swap button:first-child:active, #c-bns.swap button:first-child:hover
+  background: #d8e0e6
+  background: $cc-btn-secondary-hover-bg
+
+#s-hdr
+  border-bottom: 1px solid #f1f3f5
+  border-color: $cc-section-border
+  display: table
+  height: 4.75em
+  padding: 0 1.8em
+  position: absolute
+  top: 0
+  width: 100%
+  z-index: 999
+
+#s-hdr, #s-ttl
+  vertical-align: middle
+
+#s-ttl
+  display: table-cell
+  font-size: 1em
+
+#s-c-bn
+  font-size: 1.45em
+  font-weight: 400
+  height: 1.7em
+  margin: 0
+  overflow: hidden
+  padding: 0
+  position: relative
+  width: 1.7em
+
+  &:after
+    transform: rotate(-45deg)
+
+#s-c-bnc
+  display: table-cell
+  vertical-align: middle
+
+#c_policy__text
+  height: 31.25em
+  margin-top: 1.25em
+  overflow-y: auto
+
+#c-s-in
+  position: relative
+  left: 50%
+  top: 50%
+  transform: translateX(-50%) translateY(-50%)
+
+#cm.bar #c-inr
+  margin: 0 auto
+  display: flex
+  justify-content: space-around
+  max-width: 100%
