@@ -3,8 +3,11 @@ export default defineNuxtConfig({
         "baseURL": process.env.BASE_URL || "/",
         "cdnURL": process.env.CDN_URL,
         head: {
+            title: process.env.CLIENT_NAME +  " | Saroli s.r.o. | " + process.env.CLIENT_JOB,
             meta: [
-                { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                { name: 'description', content: process.env.META_DESCRIPTION }
+
             ],
             script: [
                 { src: 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.js', body: true },
@@ -44,9 +47,6 @@ export default defineNuxtConfig({
     image: {
         cloudinary: {
             baseURL: process.env.CDN_URL
-        },
-        strapi: {
-            baseURL: 'http://localhost:1337/uploads/'
         }
     },
     i18n: {

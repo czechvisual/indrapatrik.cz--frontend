@@ -5,7 +5,10 @@
   >
     <div class="wrap">
       <nuxt-link to="/">
-        <AppLogo />
+        <AppLogo negative />
+        <span>
+          Patrik Indra
+        </span>
       </nuxt-link>
 
       <Icon name="tabler:menu" class="navIcon" @click="showMobileMenu" />
@@ -16,10 +19,6 @@
 </template>
 
 <script>
-import {useSticky} from "~/composable/useSticky";
-
-const onScroll = useSticky()
-
 export default  {
   methods: {
     showMobileMenu () {
@@ -30,8 +29,7 @@ export default  {
 </script>
 
 <style lang="sass" scoped>
-$headerBackgroundColor: map-get($themeColors, "white")
-$headerShadow: false
+$headerBackgroundColor: transparent
 
 // Mobile
 $headerMobileNavIconColor: map-get($themeColors, "primary")
@@ -41,16 +39,14 @@ $headerMobileNavIconColor: map-get($themeColors, "primary")
 
   top: 0
   left: 0
+  position: absolute
   height: 5rem
   width: 100%
   margin: 0
-  padding: 0 1rem
+  padding: 2rem 1rem
   background: $headerBackgroundColor
   z-index: 10
   transition: all .3s ease-in-out
-
-  @if $headerShadow == true
-    @include shadow(map-get($themeColors, "black"), .1)
 
   .wrap
     @include flex ($direction: row, $justify: space-between, $align: center)
@@ -62,12 +58,17 @@ $headerMobileNavIconColor: map-get($themeColors, "primary")
     @include media-queries-up(lg)
       width: $wrap
 
-  &Scroll
-    position: fixed
-    height: 3rem
+    a
+      @include flex ($direction: row, $justify: flex-start, $align: center)
 
-    :deep(.logo svg)
-      height: 1.5rem
+      text-decoration: none
+
+      span
+        margin-left: 1rem
+        padding: .25rem .25rem .25rem 1rem
+        border-left: 2px solid map-get($themeColors, "white")
+        color: map-get($themeColors, "white")
+        font-size: 1.2rem
 
   .navIcon
     font-size: 1.5rem

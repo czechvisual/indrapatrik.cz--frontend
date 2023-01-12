@@ -31,7 +31,7 @@ const props = defineProps({
 
 const error = useError();
 if (error.value.statusCode === 404 || '404') {
-  error.value.message = 'Oops! Page not found 😔';
+  error.value.message = 'Oops! Stránka nebyla nenalezena 😔';
 }
 
 const handleError = () => clearError({ redirect: '/' });
@@ -43,7 +43,7 @@ const handleError = () => clearError({ redirect: '/' });
   height: 100%
   width: 100%
   color: map-get($themeColors, "white")
-  background: map-get($themeColors, "primary")
+  background: linear-gradient(-90deg, rgba(16,16,40,1) 0%, rgba(91,50,154,1) 40%, rgba(231,174,5,1) 100%)
   z-index: 0
 
   .container .row
@@ -51,7 +51,7 @@ const handleError = () => clearError({ redirect: '/' });
     flex-direction: column
     justify-content: center
     text-align: center
-    min-height: 80vh
+    min-height: 100vh
 
   h1
     color: map-get($themeColors, "secondary")

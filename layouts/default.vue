@@ -7,6 +7,7 @@
         v-show="showMobileMenu"
         @closeMobileMenu="showMobileMenu = false" />
     <slot />
+    <AppFooter />
   </div>
 </template>
 

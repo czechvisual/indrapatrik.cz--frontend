@@ -1,55 +1,22 @@
 {
   "backHome": "Zpět domů",
   "welcome": "Vítejte",
-  "navItems": [
-    {
-      "title": "Domů",
-      "route": "/"
-    },
-    {
-      "title": "Dokumentace",
-      "route": "/styleguide"
-    },
-    {
-      "title": "Ke stažení",
-      "route": "/downloads"
-    }
-  ],
   "hero": {
-    "title": "Welcome to the Nuxt 3 Starter Pack",
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus",
-    "button": "Dokumentace"
+    "title": "Ve světě financí se na mě můžete kdykoliv obrátit",
+    "description": "“Již více než 8 let pomáhám klientům v řešení jejich finančního zázemí, zajištění lidského života a v přípravě na budoucnost, plány a cíle. Spolupráci si zakládám na fér jednání, zodpovědném přístupu a na kvalitě předávaných informací. Pokud právě tyto hodnoty ve financích hledáte, už víte na koho se obrátit.”"
   },
-  "blogs": [
+  "features": [
     {
-      "title": "Lorem ipsum dolor sit amet",
-      "image": "https://source.unsplash.com/random",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
+      "title": "Investice",
+      "description": "Nemovitostní a Podílové fondy, Aktivně řízené portfolia"
     },
     {
-      "title": "Lorem ipsum dolor sit amet",
-      "image": "https://source.unsplash.com/random",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
+      "title": "Úvěry",
+      "description": "Hypoteční, Spotřebitelský a Podnikatelský úvěr"
     },
     {
-      "title": "Lorem ipsum dolor sit amet",
-      "image": "https://source.unsplash.com/random",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
-    },
-    {
-      "title": "Lorem ipsum dolor sit amet",
-      "image": "https://source.unsplash.com/random",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
-    },
-    {
-      "title": "Lorem ipsum dolor sit amet",
-      "image": "https://source.unsplash.com/random",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
-    },
-    {
-      "title": "Lorem ipsum dolor sit amet",
-      "image": "https://source.unsplash.com/random",
-      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
+      "title": "Pojištění",
+      "description": "Životní, Úrazové i Neživotní pojištění"
     }
   ]
 }

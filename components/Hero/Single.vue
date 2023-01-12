@@ -2,7 +2,6 @@
   <div class="container-fluid px-0 hero">
     <nuxt-img
         preload
-        provider="cloudinary"
         :src="image"
         sizes="sm:100vw md:100vw lg:100vw"
         quality="70"
@@ -17,15 +16,23 @@
             {{ title }}
           </h1>
 
-          <p class="large">
-            {{ description }}
-          </p>
+          <template v-if="description">
+            <p class="large">
+              {{ description }}
+            </p>
+          </template>
 
-          <Button
-              :text="button"
-              type="secondary"
-              size="medium"
-          />
+          <template v-else>
+            <slot />
+          </template>
+
+          <template v-if="button">
+            <Button
+                :text="button"
+                type="secondary"
+                size="medium"
+            />
+          </template>
         </div>
       </div>
     </div>
@@ -58,30 +65,29 @@ const props = defineProps({
   position: relative
   color: map-get($themeColors, "white")
   background: map-get($themeColors, "primary")
+  height: 65vh
 
   img
     position: absolute
     width: 100%
     height: 100%
     object-fit: cover
-    opacity: .15
+    // opacity: .15
     z-index: 0
 
   p
-    padding: 0 0 3rem
+    padding: 3rem 0 0
     opacity: .75
 
-    @include media-queries-up(lg)
-      max-width: 70%
+  p,
+  h1
+    max-width: 60%
 
   .container
-    @include flex ($direction: column, $justify: center, $align: flex-start)
+    @include flex ($direction: column, $justify: center, $align: flex-end)
 
     position: relative
-    padding: 3rem 1rem
-    height: 90vh
+    padding: 0 3rem
+    height: 100%
     z-index: 1
-
-    @include media-queries-up(md)
-      height: 30rem
 </style>

@@ -1,32 +1,32 @@
 // modal - style
 $cc-bg: #fff
-$cc-text: hsl(208, 15%, 12%)
-$cc-btn-primary-bg: map-get($themeColors, "primary")
+$cc-text: map-get($themeColors, "typography")
+$cc-btn-primary-bg: map-get($themeColors, "secondary")
 $cc-btn-primary-text: var($cc-bg)
-$cc-btn-primary-hover-bg: darken(map-get($themeColors, "primary"), 20%)
+$cc-btn-primary-hover-bg: darken(map-get($themeColors, "secondary"), 20%)
 $cc-btn-secondary-bg: #fff
 $cc-btn-secondary-text: var($cc-text)
-$cc-btn-secondary-hover-bg: hsl(208, 16%, 89%)
+$cc-btn-secondary-hover-bg: rgba(map-get($themeColors, "primary"), .05)
 
 // dialog - style
 $cc-cm-bg: #fff
-$cc-cm-text: hsl(208, 15%, 12%)
-$cc-cm-btn-primary-bg: map-get($themeColors, "primary")
+$cc-cm-text: map-get($themeColors, "typography")
+$cc-cm-btn-primary-bg: map-get($themeColors, "secondary")
 $cc-cm-btn-primary-text: var($cc-bg)
-$cc-cm-btn-primary-hover-bg: darken(map-get($themeColors, "primary"), 20%)
+$cc-cm-btn-primary-hover-bg: darken(map-get($themeColors, "secondary"), 20%)
 $cc-cm-btn-secondary-bg: #fff
 $cc-cm-btn-secondary-text: var($cc-cm-text)
-$cc-cm-btn-secondary-hover-bg: hsl(208, 16%, 89%)
+$cc-cm-btn-secondary-hover-bg: rgba(map-get($themeColors, "primary"), .05)
 
 // components - style
-$cc-toggle-bg-off: hsl(208, 16%, 89%)
-$cc-toggle-bg-on: var($cc-btn-primary-bg)
-$cc-toggle-bg-readonly: #d5dee2
+$cc-toggle-bg-off: rgba(map-get($themeColors, "primary"), .1)
+$cc-toggle-bg-on: map-get($themeColors, "primary")
+$cc-toggle-bg-readonly: rgba(map-get($themeColors, "primary"), .05)
 $cc-toggle-knob-bg: #fff
 $cc-toggle-knob-icon-color: #ecf2fa
-$cc-block-text: var($cc-text)
-$cc-cookie-category-block-bg: #f0f4f7
-$cc-cookie-category-block-bg-hover: #e9eff4
+$cc-block-text: map-get($themeColors, "typography")
+$cc-cookie-category-block-bg: rgba(map-get($themeColors, "primary"), .05)
+$cc-cookie-category-block-bg-hover: rgba(map-get($themeColors, "primary"), .05)
 $cc-section-border: #f1f3f5
 $cc-cookie-table-border: #e9edf2
 $cc-overlay-bg: rgba(4, 6, 8, .85)
@@ -34,7 +34,6 @@ $cc-webkit-scrollbar-bg: #cfd5db
 $cc-webkit-scrollbar-bg-hover: #9199a0
 
 #cm
-  background: #fff
   background: $cc-cm-bg
   bottom: 1.25em
   box-shadow: 0 .625em 1.875em rgba(2, 2, 3, .28)
@@ -105,7 +104,6 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
       text-decoration: none
 
   .c-bn
-    background: #e5ebef
     background: $cc-btn-secondary-bg
     border-radius: 4px
     color: $cc-btn-secondary-text
@@ -116,9 +114,7 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
     padding: 1em 1.7em
     text-align: center
     -moz-user-select: none
-    -khtml-user-select: none
     -webkit-user-select: none
-    -o-user-select: none
     user-select: none
 
   .b-tg
@@ -179,8 +175,7 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
         width: 1.25em
 
   .cc-link
-    border-bottom: 1px solid #253b48
-    border-color: $cc-text
+    border-bottom: 1px solid $cc-text
     color: $cc-btn-primary-bg
     cursor: pointer
     display: inline
@@ -208,8 +203,7 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
     opacity: 0
 
     &:before
-      border: solid #fff
-      border-color: $cc-toggle-knob-icon-color
+      border: solid $cc-toggle-knob-icon-color
       border-width: 0 2px 2px 0
       display: inline-block
       left: .75em
@@ -237,7 +231,6 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
       border-radius: 0
       margin: 0 0 0 auto
       max-width: 32em
-      max-width: 100%
       width: 100%
 
     &.left
@@ -253,8 +246,7 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
           top: -9999px
 
       tr
-        border-top: 1px solid #e3e7ed
-        border-color: $cc-cookie-table-border
+        border-top: 1px solid $cc-cookie-table-border
 
       td
         border: none
@@ -380,8 +372,7 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
     position: relative
 
   .c-bl
-    border: 1px solid #f1f3f5
-    border-color: $cc-section-border
+    border: 1px solid $cc-section-border
     margin-bottom: .5em
     padding: 1em
     transition: background-color .25s ease
@@ -418,7 +409,6 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
 
       &:first-child
         margin-bottom: 1em
-        margin-bottom: .5em
 
   &::-webkit-scrollbar-thumb
     background: $cc-webkit-scrollbar-bg
@@ -448,7 +438,6 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
     padding: 0
     text-align: left
     width: 100%
-    width: 100%
 
   th
     font-family: inherit
@@ -461,11 +450,9 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
       top: -9999px
 
       &:first-child
-        border-bottom: 1px solid #e9edf2
         border-color: $cc-cookie-table-border
 
   tr
-    border-top: 1px solid #e3e7ed
     border-color: $cc-cookie-table-border
 
   td
@@ -474,7 +461,6 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
     position: relative
 
     &:before
-      color: #000
       color: $cc-text
       content: attr(data-column)
       left: 1em
@@ -572,8 +558,6 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
       position: relative
       transition: background-color .25s ease
       width: 100%
-      padding-bottom: 1.2em
-      padding-top: 1.2em
 
       &.exp
         cursor: pointer
@@ -585,7 +569,6 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
         border-bottom-right-radius: 0
 
   .p
-    color: #2d4156
     color: $cc-block-text
     font-size: .9em
     line-height: 1.5em
@@ -610,7 +593,6 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
 #cs
   bottom: 0
   left: 0
-  padding: 0 1.7em
   position: fixed
   right: 0
   top: 0
@@ -640,7 +622,6 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
 #c-bns button:first-child, #s-bns button:first-child
   background: #253b48
   background: $cc-btn-primary-bg
-  color: #fff
   color: $cc-btn-primary-text
 
 #c-bns
@@ -649,13 +630,11 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
       &:first-child
         background: #e5ebef
         background: $cc-btn-secondary-bg
-        color: #40505a
         color: $cc-btn-secondary-text
 
       &:last-child
         background: #253b48
         background: $cc-btn-primary-bg
-        color: #fff
         color: $cc-btn-primary-text
 
 #c-bns button:first-child:active, #c-bns button:first-child:hover, #c-bns.swap button:last-child:active, #c-bns.swap button:last-child:hover, #s-bns button:first-child:active, #s-bns button:first-child:hover
@@ -667,8 +646,7 @@ $cc-webkit-scrollbar-bg-hover: #9199a0
   background: $cc-btn-secondary-hover-bg
 
 #s-hdr
-  border-bottom: 1px solid #f1f3f5
-  border-color: $cc-section-border
+  border-bottom: 1px solid $cc-section-border
   display: table
   height: 4.75em
   padding: 0 1.8em
