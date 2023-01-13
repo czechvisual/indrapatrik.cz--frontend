@@ -37,6 +37,9 @@ export default {
     fill: map-get($themeColors, "primary")
     transition: all .3s ease-in-out
 
+    @include media-queries-down(sm)
+      height: 1rem
+
   &-negative
     svg
       fill: map-get($themeColors, "white")

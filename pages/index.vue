@@ -60,9 +60,20 @@ const { tm, rt } = useLang()
       font-size: 2.5rem
       color: map-get($themeColors, "secondary")
 
+      @include media-queries-down(sm)
+        margin-right: .5rem
+        font-size: 1.5rem
+
     .content
       h3
         color: map-get($themeColors, "primary")
+
+        @include media-queries-down(sm)
+          font-size: 1rem
+
+      p
+        @include media-queries-down(sm)
+          display: none
 
 img.portrait
   position: absolute
@@ -70,4 +81,7 @@ img.portrait
   right: -3rem
   max-height: 80vh
   z-index: 0
+
+  @include media-queries-down(sm)
+    display: none
 </style>

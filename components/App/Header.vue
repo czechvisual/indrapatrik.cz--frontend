@@ -3,17 +3,20 @@
       id="header"
       class="header"
   >
-    <div class="wrap">
-      <nuxt-link to="/">
-        <AppLogo negative />
-        <span>
-          Patrik Indra
-        </span>
-      </nuxt-link>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <nuxt-link to="/">
+            <AppLogo negative />
 
-      <Icon name="tabler:menu" class="navIcon" @click="showMobileMenu" />
+            <span>Patrik Indra</span>
+          </nuxt-link>
 
-      <AppNavItems />
+          <Icon name="tabler:menu" class="navIcon" @click="showMobileMenu" />
+
+          <AppNavItems />
+        </div>
+      </div>
     </div>
   </header>
 </template>
@@ -32,7 +35,7 @@ export default  {
 $headerBackgroundColor: transparent
 
 // Mobile
-$headerMobileNavIconColor: map-get($themeColors, "primary")
+$headerMobileNavIconColor: map-get($themeColors, "secondary")
 
 .header
   @include flex($direction: column, $justify: flex-start, $align: center)
@@ -48,14 +51,14 @@ $headerMobileNavIconColor: map-get($themeColors, "primary")
   z-index: 10
   transition: all .3s ease-in-out
 
-  .wrap
+  .container .row .col
     @include flex ($direction: row, $justify: space-between, $align: center)
 
     flex-wrap: wrap
     width: 100%
     height: 100%
 
-    @include media-queries-up(lg)
+    @include media-queries-up(xl)
       width: $wrap
 
     a
@@ -69,6 +72,11 @@ $headerMobileNavIconColor: map-get($themeColors, "primary")
         border-left: 2px solid map-get($themeColors, "white")
         color: map-get($themeColors, "white")
         font-size: 1.2rem
+
+        @include media-queries-down(sm)
+          margin-left: .5rem
+          padding: 0 0 0 .5rem
+          font-size: .825rem
 
   .navIcon
     font-size: 1.5rem

@@ -5,7 +5,7 @@
   >
     <div class="wrap">
       <p>
-        © 2022 Saroli s.r.o. | Patrik Indra | Created by
+        © 2022 Saroli s.r.o. | Patrik Indra | <span>Created by</span>
 
         <a href="https://czechvisual.cz/">
           <nuxt-img
@@ -66,10 +66,20 @@ export default  {
       padding: 1rem 0
       color: map-get($themeColors, "white")
 
+      @include media-queries-down(sm)
+        font-size: .75rem
+
+      span
+        @include media-queries-down(sm)
+          display: none
+
       a
         margin-bottom: .5rem
         padding-left: .25rem
 
         img.logo
           height: 1rem
+
+          @include media-queries-down(sm)
+            height: .75rem
 </style>

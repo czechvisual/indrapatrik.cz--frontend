@@ -79,9 +79,15 @@ const props = defineProps({
     padding: 3rem 0 0
     opacity: .75
 
+    @include media-queries-down(sm)
+      display: none
+
   p,
   h1
     max-width: 60%
+
+    @include media-queries-down(sm)
+      max-width: 100%
 
   .container
     @include flex ($direction: column, $justify: center, $align: flex-end)
