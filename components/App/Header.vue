@@ -58,9 +58,6 @@ $headerMobileNavIconColor: map-get($themeColors, "secondary")
     width: 100%
     height: 100%
 
-    @include media-queries-up(xl)
-      width: $wrap
-
     a
       @include flex ($direction: row, $justify: flex-start, $align: center)
 

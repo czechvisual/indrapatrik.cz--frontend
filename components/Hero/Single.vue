@@ -86,6 +86,9 @@ const props = defineProps({
   h1
     max-width: 60%
 
+    @include media-queries-down(md)
+      max-width: 80%
+
     @include media-queries-down(sm)
       max-width: 100%
 
@@ -93,7 +96,7 @@ const props = defineProps({
     @include flex ($direction: column, $justify: center, $align: flex-end)
 
     position: relative
-    padding: 0 3rem
+    padding: 0 1rem
     height: 100%
     z-index: 1
 </style>

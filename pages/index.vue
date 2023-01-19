@@ -6,16 +6,6 @@
         :description="$t('hero.description')"
     />
 
-    <nuxt-img
-        preload
-        class="portrait"
-        src="/img/indra_body.png"
-        sizes="sm:100vw md:100vw lg:100vw"
-        quality="70"
-        format="webp"
-        loading="lazy"
-    />
-
     <div class="container">
       <div class="features">
         <div
@@ -36,6 +26,20 @@
         </div>
       </div>
     </div>
+
+    <div class="bounds">
+      <div class="bounds-wrap">
+        <nuxt-img
+            preload
+            class="portrait"
+            src="/img/indra_body.png"
+            sizes="sm:100vw md:100vw lg:100vw"
+            quality="70"
+            format="webp"
+            loading="lazy"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -46,6 +50,42 @@ const { tm, rt } = useLang()
 </script>
 
 <style lang="sass" scoped>
+.bounds
+  position: absolute
+  bottom: 0
+  right: 0
+  width: 100%
+  height: 100%
+  z-index: 10
+
+  &-wrap
+    position: relative
+    width: 100%
+    height: 100%
+
+    @include media-queries-up(lg)
+      margin: 0 auto
+      max-width: $wrap
+
+    img.portrait
+      position: absolute
+      bottom: 0
+      right: -20rem
+      max-height: 80vh
+      z-index: 0
+
+      @include media-queries-down(xl)
+        right: -20rem
+
+      @include media-queries-down(lg)
+        right: -10rem
+
+      @include media-queries-down(md)
+        right: -15rem
+
+      @include media-queries-down(sm)
+        display: none
+
 .features
   @include flex ($direction: row, $justify: flex-start, $align: center)
 
@@ -54,6 +94,10 @@ const { tm, rt } = useLang()
 
   &Item
     @include flex ($direction: row, $justify: flex-start, $align: flex-start)
+
+    @include media-queries-up(md)
+      min-height: 8rem
+
 
     .icon
       margin-right: 1rem
@@ -65,6 +109,8 @@ const { tm, rt } = useLang()
         font-size: 1.5rem
 
     .content
+      height: 100%
+
       h3
         color: map-get($themeColors, "primary")
 
@@ -74,14 +120,4 @@ const { tm, rt } = useLang()
       p
         @include media-queries-down(sm)
           display: none
-
-img.portrait
-  position: absolute
-  bottom: 0
-  right: -3rem
-  max-height: 80vh
-  z-index: 0
-
-  @include media-queries-down(sm)
-    display: none
 </style>

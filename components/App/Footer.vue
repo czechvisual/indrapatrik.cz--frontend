@@ -3,39 +3,29 @@
       id="footer"
       class="footer"
   >
-    <div class="wrap">
-      <p>
-        © 2022 Saroli s.r.o. | Patrik Indra | <span>Created by</span>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>
+            © 2022 Saroli s.r.o. | Patrik Indra | <span>Created by</span>
 
-        <a href="https://czechvisual.cz/">
-          <nuxt-img
-              preload
-              class="logo"
-              src="/img/czechvisual_logo.svg"
-              sizes="sm:100vw md:100vw lg:100vw"
-              quality="70"
-              format="webp"
-              loading="lazy"
-          />
-        </a>
-      </p>
+            <a href="https://czechvisual.cz/">
+              <nuxt-img
+                  preload
+                  class="logo"
+                  src="/img/czechvisual_logo.svg"
+                  sizes="sm:100vw md:100vw lg:100vw"
+                  quality="70"
+                  format="webp"
+                  loading="lazy"
+              />
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-
-<script>
-import {useSticky} from "~/composable/useSticky";
-
-const onScroll = useSticky()
-
-export default  {
-  methods: {
-    showMobileMenu () {
-      this.$emit('showMobileMenu')
-    }
-  },
-}
-</script>
 
 <style lang="sass" scoped>
 .footer
@@ -50,16 +40,13 @@ export default  {
   z-index: -1
   transition: all .3s ease-in-out
 
-  .wrap
+  .container .row .col
     @include flex ($direction: row, $justify: flex-start, $align: center)
 
     flex-wrap: wrap
     width: 100%
     height: 100%
-    padding: 0 1rem
-
-    @include media-queries-up(lg)
-      width: $wrap
+    padding: 0
 
     p
       margin-bottom: 0
