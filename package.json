@@ -1,20 +1,19 @@
 {
-  "private": true,
+  "name": "indra-frontend",
+  "author": "Patrik Vaďura",
+  "version": "1.0.0",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27719579.87dcdf2",
-    "nuxt": "3.0.0-rc.11",
-    "nuxt-icon": "^0.1.6",
-    "sass": "^1.55.0"
+    "start": "npm start",
+    "install": "npm install",
+    "lint": "stylelint --fix \"**/*.less\" --custom-syntax postcss-less"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "^8.0.0-beta.4",
-    "bootstrap": "^5.2.2"
+    "stylelint-less": "^1.0.1"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.5",
+    "postcss-less": "^6.0.0",
+    "stylelint": "^14.2.0",
+    "stylelint-config-standard": "^24.0.0"
   }
 }

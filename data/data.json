@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Patrik Indra - Investiční a úvěrový specialista"
+  },
+  "header": {
+    "logo": "/assets/img/logo_negative_alt.png",
+    "homePath": "#",
+    "links": [
+      {
+        "link": "",
+        "title": "+420 775 265 640"
+      },
+      {
+        "link": "mailto:indra@saroli.cz",
+        "title": "indra@saroli.cz",
+        "target": true
+      },
+      {
+        "link": "",
+        "title": "Stojanova 508, Uh. Hradiště"
+      },
+      {
+        "link": "",
+        "title": "Vavrečkova 7074, Zlín"
+      }
+    ]
+  },
+  "footer": {
+    "classes": "fixed",
+    "createdBy": "Created by",
+    "credits": "© 2023 Patrik Indra",
+    "logo": "/assets/img/logo_creator.svg"
+  },
+  "hero": {
+    "classes": "",
+    "title": "Ve <span>financích</span> se na mě můžete spolehnout",
+    "description": "“Již více než 8 let pomáhám klientům v řešení jejich finančního zázemí, zajištění lidského života a v přípravě na budoucnost, plány a cíle. Spolupráci si zakládám na fér jednání, zodpovědném přístupu a na kvalitě předávaných informací. Pokud právě tyto hodnoty ve financích hledáte, už víte na koho se obrátit.”",
+    "button": "Mám zájem o nabídku",
+    "background": "/assets/img/indra_bg_01.webp",
+    "services": [
+      {
+        "icon": "/assets/img/icon_investice_negative.png",
+        "title": "Investice",
+        "subtitle": "Nemovitostní a Podílové fondy, Aktivně řízené portfolia"
+      },
+      {
+        "icon": "/assets/img/icon_uvery_negative.png",
+        "title": "Úvěry",
+        "subtitle": "Hypoteční, Spotřebitelský a Podnikatelský úvěr"
+      },
+      {
+        "icon": "/assets/img/icon_pojisteni_negative.png",
+        "title": "Pojištění",
+        "subtitle": "Životní, Úrazové i Neživotní pojištění"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+@import "main";
+
+:root {
+  // Spacers
+  --spacer: .5rem;
+
+  // Layout
+  --wrapS: 56.25rem;      //900px
+  --wrapM: 75rem;         //1200px
+  --wrapL: 100rem;        //1600px
+  --wrap: var(--wrapL);
+
+  // Calculate
+  --calcWidth: calc((100vw - 30rem) / (75 - 30));
+
+  // Font
+  --fontFamily: 'Hind', sans-serif;
+
+  // Font-weight
+  .typoPrepare(Weight, Light, 300);
+  .typoPrepare(Weight, Regular, normal);
+  .typoPrepare(Weight, Medium, 500);
+  .typoPrepare(Weight, Bold, bold);
+  .typoPrepare(Weight, Black, 900);
+
+  // Line-height
+  --lineHeightSmall: calc(var(--lineHeightBase) * .75);
+  --lineHeightBase: calc(var(--spacer) * 3);
+  --lineHeightLarge: calc(var(--lineHeightBase) * 1.25);
+  --lineHeightExtraLarge: calc(var(--lineHeightBase) * 1.5);
+
+  // Colors
+  .colorPrepare(primary, #1A1A44);
+  .colorPrepare(secondary, #5B329A);
+  .colorPrepare(typography, #000000);
+  .colorPrepare(black, #000000);
+  .colorPrepare(white, #ffffff);
+  .colorPrepare(pageBg, #000000);
+
+  // HoverStates
+  .colorPrepare(primaryHover, #29295b);
+  .colorPrepare(secondaryHover, #856caf);
+  .colorPrepare(typographyHover, #ffffff);
+  .colorPrepare(blackHover, #ffffff);
+  .colorPrepare(whiteHover, #000000);
+
+  // Global
+  --pageBg: var(--black);
+  --bodyTextColor: var(--typography);
+  --linkColor: var(--secondary);
+  --linkDecoration: none;
+  --linkHoverDecoration: none;
+}
