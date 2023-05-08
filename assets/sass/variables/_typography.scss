@@ -1,0 +1,63 @@
+// Font face
+
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+
+// Line heights
+
+$line-heights: (
+  "small": 1,
+  "normal": 1.25,
+  "medium": 1.5,
+  "large": 2
+);  $line-heights: map-merge($line-heights, $line-heights);
+
+// Font weight
+
+$font-weights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "black": 900
+);  $font-weights: map-merge($font-weights, $font-weights);
+
+// Generate :root variables
+
+@function rounded-font-size($size) {
+  $rounded-size: round($size);
+  $final-size: ceil(calc($rounded-size / 2)) * 2;
+  @return #{$final-size};
+}
+
+:root {
+  --font-default: 'Hind', sans-serif;
+
+  @each $line-height-name, $value in $line-heights {
+    --line-height-#{$line-height-name}: #{$value};
+  }
+
+  @each $font-weight-name, $value in $font-weights {
+    --font-weight-#{$font-weight-name}: #{$value};
+  }
+}
+
+
+
+// Font setting
+
+@mixin font-setting($selector, $min, $max, $font-weight, $line-height) {
+  #{$selector} {
+    font-size: clamp(#{$min}rem, calc(#{$min}rem + (#{$max} - #{$min}) * var(--calc-width)), #{$max}rem);
+    font-weight: var(--font-weight-#{$font-weight});
+    line-height: var(--line-height-#{$line-height});
+
+    span,
+    b {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}
+
+@include font-setting(h1, 3.5, 5, bold, normal);
+@include font-setting(p, .825, 1, light, normal);

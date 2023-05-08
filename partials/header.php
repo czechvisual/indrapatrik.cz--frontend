@@ -7,11 +7,9 @@
         <?=$data->meta->title?>
     </title>
 
-    <link rel='stylesheet/less' href='assets/css/config.less'>
+    <link rel='stylesheet' href='public/assets/css'>
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <script src="https://cdn.jsdelivr.net/npm/less@4"></script>
-    <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
 </head>
 
 <body id="body">

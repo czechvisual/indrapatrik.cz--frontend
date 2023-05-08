@@ -1,8 +1,3 @@
-# Frontend - PHP / LESS
-
-### Production
-[www.patrikindra.cz](https://patrikindra.cz/)
-
 ## Install
 
 ``` bash
@@ -11,6 +6,24 @@ $ npm install
 
 # lint code
 $ npm run lint
+```
+
+## Docker
+
+V kořenovém adresáři projektu se nachází soubor s názvem *Dockerfile*. Dockerfile slouží k definování prostředí kontejneru a konfiguraci aplikace.
+
+``` bash
+# Vytvoření Docker obrazu a spuštění kontejneru
+$ npm run docker-build
+
+# Zastavení kontejneru
+$ npm run docker-run
+
+# Opětovné spuštění kontejneru
+$ npm run docker-stop
+
+# Zobrazit běžící kontejnery || včetně zastavených
+$ docker ps || docker ps -a
 ```
 
 ## Useful
