@@ -7,7 +7,7 @@
         <?=$data->meta->title?>
     </title>
 
-    <link rel='stylesheet' href='public/assets/css'>
+    <link rel='stylesheet' href='/public/assets/css/main.css'>
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>

@@ -1,12 +1,22 @@
 @import 'functions';
 
 // Variables
-
 @import 'variables/breakpoints';
 @import 'variables/spacing';
 @import "variables/colors";
 @import "variables/typography";
 
-// Layout
+// Setup
+@import 'setup/align';
+@import 'setup/border';
+@import 'setup/flex';
+@import 'setup/grid';
+@import 'setup/margin';
+@import 'setup/padding';
+@import 'setup/wrap';
 
+// Layout
 @import "layout/general";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/hero";

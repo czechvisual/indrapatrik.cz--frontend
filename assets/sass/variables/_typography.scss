@@ -1,9 +1,7 @@
 // Font face
-
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
 
 // Line heights
-
 $line-heights: (
   "small": 1,
   "normal": 1.25,
@@ -12,7 +10,6 @@ $line-heights: (
 );  $line-heights: map-merge($line-heights, $line-heights);
 
 // Font weight
-
 $font-weights: (
   "light": 300,
   "regular": 400,
@@ -23,7 +20,6 @@ $font-weights: (
 );  $font-weights: map-merge($font-weights, $font-weights);
 
 // Generate :root variables
-
 @function rounded-font-size($size) {
   $rounded-size: round($size);
   $final-size: ceil(calc($rounded-size / 2)) * 2;
@@ -45,7 +41,6 @@ $font-weights: (
 
 
 // Font setting
-
 @mixin font-setting($selector, $min, $max, $font-weight, $line-height) {
   #{$selector} {
     font-size: clamp(#{$min}rem, calc(#{$min}rem + (#{$max} - #{$min}) * var(--calc-width)), #{$max}rem);
