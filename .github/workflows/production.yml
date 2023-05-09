@@ -23,7 +23,6 @@ jobs:
         local-dir: ./public
         server-dir: indrafinance.cz/
         state-name: .production.json
-        dangerous-clean-slate: true
         exclude: |
           **/.git*/**
           **/node_modules/**
