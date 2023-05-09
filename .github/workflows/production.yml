@@ -20,7 +20,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD_CLUSTER }}
         protocol: ftps
         port: 21
-        local-dir: ./public
+        local-dir: ./public/
         server-dir: indrafinance.cz/
         state-name: .production.json
         exclude: |
