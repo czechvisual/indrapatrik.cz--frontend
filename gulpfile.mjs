@@ -18,11 +18,11 @@ const { create: createBrowserSync } = browserSyncModule;
 const browserSync = createBrowserSync();
 const sass = gulpSass(sassLib);
 
-// Asstes
+// Assets
 function assets() {
   return gulp.src('assets/img/*.{jpg,jpeg,png,gif,webp,svg}')
-    .pipe(imagemin())
-    .pipe(gulp.dest('public/assets/img'));
+      .pipe(imagemin())
+      .pipe(gulp.dest('public/assets/img'));
 }
 
 function favicon() {
@@ -38,7 +38,7 @@ function svg() {
 }
 
 // Styles
-function styles() {
+function stylesLocal() {
   return gulp.src('assets/sass/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -47,6 +47,17 @@ function styles() {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('public/assets/css'))
     .pipe(browserSync.stream());
+}
+
+function stylesPublic() {
+  return gulp.src('assets/sass/main.scss')
+      .pipe(sourcemaps.init())
+      .pipe(sass().on('error', sass.logError))
+      .pipe(autoprefixer())
+      .pipe(cleanCSS({ compatibility: 'ie8' }))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('assets/css'))
+      .pipe(browserSync.stream());
 }
 
 // Scripts
@@ -97,7 +108,8 @@ function watch() {
     open: false,
   });
 
-  gulp.watch('assets/sass/**/*.scss', styles);
+  gulp.watch('assets/sass/**/*.scss', stylesLocal);
+  gulp.watch('assets/sass/**/*.scss', stylesPublic);
   gulp.watch('**/*.php').on('change', browserSync.reload);
   gulp.watch('**/*.php').on('change', browserSync.reload);
   gulp.watch('assets/img/*.{jpg,jpeg,png,gif,svg}', assets);
@@ -111,7 +123,8 @@ export {
   assets,
   favicon,
   svg,
-  styles,
+  stylesLocal,
+  stylesPublic,
   scripts,
   phpToHTML,
   lintStyle,
@@ -120,4 +133,4 @@ export {
   watch,
 };
 
-export default gulp.parallel(assets, favicon, svg, scripts, phpToHTML, generateSitemap, styles);
+export default gulp.parallel(assets, favicon, svg, scripts, phpToHTML, generateSitemap, stylesLocal, stylesPublic);
