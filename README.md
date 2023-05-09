@@ -17,10 +17,10 @@ V kořenovém adresáři projektu se nachází soubor s názvem *Dockerfile*. Do
 $ npm run docker-build
 
 # Zastavení kontejneru
-$ npm run docker-run
+$ npm run docker-stop
 
 # Opětovné spuštění kontejneru
-$ npm run docker-stop
+$ npm run docker-run
 
 # Zobrazit běžící kontejnery || včetně zastavených
 $ docker ps || docker ps -a
@@ -30,7 +30,7 @@ $ docker ps || docker ps -a
 
 - [HTML 5](https://dev.w3.org/html5/html-author/)
 - [CSS 3](https://devdocs.io/css/)
-- [Less](https://lesscss.org)
+- [SASS](https://sass-lang.com)
 - [PHP](https://www.php.net/docs.php)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 

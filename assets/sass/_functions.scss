@@ -13,7 +13,7 @@
   }
 }
 
-//mediaQueries
+// MediaQueries
 @function breakpoint-next($name, $breakpoints: $breakpoints, $breakpoint-names: map-keys($breakpoints)) {
   $n: index($breakpoint-names, $name);
 

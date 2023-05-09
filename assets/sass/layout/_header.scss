@@ -1,5 +1,5 @@
 .header {
-  .flex(column, flex-start, center);
+  @include flex($direction: column, $justify: flex-start, $align: center);
 
   position: fixed;
   top: 0;
@@ -13,7 +13,7 @@
   transition: all .3s ease-in-out;
 
   .wrap {
-    .flex(row, space-between, center);
+    @include flex($direction: row, $justify: space-between, $align: center);
 
     flex-wrap: wrap;
     height: 100%;
@@ -21,12 +21,12 @@
 
   .logo {
     img {
-      height: clamp(1rem, calc(1.5rem + (1.5 - 1) * var(--calcWidth)), 1.5rem) !important;
+      @include clamp(height, 1, 1.5);
     }
   }
 
   .navigation {
-    .flex(row, center, center);
+    @include flex($direction: row, $justify: center, $align: center);
 
     margin: 0;
     padding: 0 1rem;
@@ -35,17 +35,15 @@
     transition: all .3s ease-in-out;
 
     @include media-queries-down(sm) {
-      .flex(column, flex-start, flex-start);
+      @include flex($direction: column, $justify: flex-start, $align: flex-start);
 
       display: none;
       width: 100%;
-      background: var(--white);
+      background: var(--color-light-default);
     }
 
     li {
-      $white-opac: rgba(var(--color-light-default), .4);
-
-      border-left: 1px solid $white-opac;
+      border-left: 1px solid var(--color-dark-lightest);
       line-height: 1;
 
       &:first-of-type {
@@ -59,16 +57,16 @@
       padding: .5rem 1rem;
       font-size: 1rem;
       font-weight: var(--fontWeightRegular);
-      color: var(--white);
+      color: var(--color-light-default);
       text-decoration: none;
       transition: all .6s ease-in-out;
 
       &:hover {
-        color: var(--secondary);
+        color: var(--color-secondary-light);
       }
 
       @include media-queries-down(sm) {
-        color: var(--typography);
+        color: var(--color-primary-default);
         padding: 1rem;
       }
     }
@@ -85,14 +83,14 @@
       .navIcon {
         position: relative;
         display: block;
-        background: var(--white);
+        background: var(--color-light-default);
         width: 1.5rem;
         height: 1.5px;
         transition: all .2s ease-out;
 
         &::before,
         &::after {
-          background: var(--white);
+          background: var(--color-light-default);
           content: "";
           display: block;
           width: 100%;

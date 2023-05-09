@@ -1,23 +1,13 @@
-.grid(@min, @gapCol, @gapRow) {
-  display: grid;
-  align-items: var(--alignItems, center);
-  width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, unit(min(100%, @min), rem)), 1fr));
-  grid-column-gap: unit(@gapCol, rem);
-  row-gap: unit(@gapRow, rem);
-  white-space: normal;
-}
-
 .grid {
   /* stylelint-disable */
-  .grid(100%, 0, 0);
-  &-1 { .grid(100%, 6, 4); }
-  &-2 { .grid(16, 6, 4); }
-  &-3 { .grid(20, 4, 3); }
-  &-4 { .grid(16, 4, 3); }
-  &-5 { .grid(18, 2, 2); }
-  &-6 { .grid(14, 2, 2); }
-  &-7 { .grid(12, 2, 2); }
+  @include grid(100%, 0, 0);
+  &-1 { @include grid(100%, 6, 4); }
+  &-2 { @include grid(16, 6, 4); }
+  &-3 { @include grid(20, 4, 3); }
+  &-4 { @include grid(16, 4, 3); }
+  &-5 { @include grid(18, 2, 2); }
+  &-6 { @include grid(14, 2, 2); }
+  &-7 { @include grid(12, 2, 2); }
   /* stylelint-enable */
 }
 
@@ -48,28 +38,14 @@
 }
 
 .col {
-  .colConfig (@i) {
-    &-@{i} {
-      width: 100%;
-
-      @media (min-width: @screenMd) {
-        width: 50%;
-      }
-
-      @media (min-width: @screenLg) {
-        width: calc((10% * @i) - 1rem); /* (10% * @i) - @gap */
-      }
-    }
-  }
-
-  .colConfig (@i: 10);
-  .colConfig (@i: 9);
-  .colConfig (@i: 8);
-  .colConfig (@i: 7);
-  .colConfig (@i: 6);
-  .colConfig (@i: 5);
-  .colConfig (@i: 4);
-  .colConfig (@i: 3);
-  .colConfig (@i: 2);
-  .colConfig (@i: 1);
+  @include colConfig ($i: 10);
+  @include colConfig ($i: 9);
+  @include colConfig ($i: 8);
+  @include colConfig ($i: 7);
+  @include colConfig ($i: 6);
+  @include colConfig ($i: 5);
+  @include colConfig ($i: 4);
+  @include colConfig ($i: 3);
+  @include colConfig ($i: 2);
+  @include colConfig ($i: 1);
 }

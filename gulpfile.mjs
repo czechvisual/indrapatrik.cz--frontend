@@ -19,11 +19,16 @@ const browserSync = createBrowserSync();
 const sass = gulpSass(sassLib);
 
 // Asstes
-
 function assets() {
   return gulp.src('assets/img/*.{jpg,jpeg,png,gif,svg}')
     .pipe(imagemin())
     .pipe(gulp.dest('public/assets/img'));
+}
+
+function favicon() {
+  return gulp.src('favicon.ico')
+      .pipe(imagemin())
+      .pipe(gulp.dest('public'));
 }
 
 function svg() {
@@ -33,7 +38,6 @@ function svg() {
 }
 
 // Styles
-
 function styles() {
   return gulp.src('assets/sass/main.scss')
     .pipe(sourcemaps.init())
@@ -46,7 +50,6 @@ function styles() {
 }
 
 // Scripts
-
 function scripts() {
   return gulp.src('assets/js/**/*.js')
     .pipe(terser())
@@ -54,7 +57,6 @@ function scripts() {
 }
 
 // PHP to HTML
-
 function phpToHTML() {
   return gulp.src('index.php')
     .pipe(php2html())
@@ -63,7 +65,6 @@ function phpToHTML() {
 }
 
 // Lint
-
 function lintStyle() {
   return gulp.src('assets/sass/**/*.scss')
     .pipe(sassLint())
@@ -79,7 +80,6 @@ function lintScript() {
 }
 
 // Generate sitemap
-
 function generateSitemap() {
   return gulp.src('public/**/*.html', {
     read: false
@@ -91,7 +91,6 @@ function generateSitemap() {
 }
 
 // Watch
-
 function watch() {
   browserSync.init({
     proxy: 'localhost:3000',
@@ -110,6 +109,7 @@ function watch() {
 
 export {
   assets,
+  favicon,
   svg,
   styles,
   scripts,
@@ -120,4 +120,4 @@ export {
   watch,
 };
 
-export default gulp.parallel(assets, svg, scripts, phpToHTML, generateSitemap, styles);
+export default gulp.parallel(assets, favicon, svg, scripts, phpToHTML, generateSitemap, styles);

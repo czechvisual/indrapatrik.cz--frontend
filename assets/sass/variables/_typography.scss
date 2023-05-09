@@ -54,5 +54,5 @@ $font-weights: (
   }
 }
 
-@include font-setting(h1, 3.5, 5, bold, normal);
-@include font-setting(p, .825, 1, light, normal);
+@include font-setting(h1, 2, 3, bold, normal);
+@include font-setting(p, .825, .9, light, normal);

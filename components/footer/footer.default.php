@@ -1,12 +1,12 @@
-<div class="footer <?=$classes?>">
+<div class="footer <?= $classes ?>">
     <div class="wrap">
         <div class="credits">
-            <?=$credits?>
+            <?= $credits ?>
 
             <span>
-                <?=$createdBy?>
+                <?= $createdBy ?>
 
-                <img src="<?=$logo?>">
+                <img src="<?= $logo ?>">
             </span>
         </div>
     </div>
