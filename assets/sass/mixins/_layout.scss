@@ -1,0 +1,49 @@
+// Layout
+
+// Flex
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+}
+
+// Grid
+@mixin grid($min, $gapCol, $gapRow) {
+  display: grid;
+  align-items: var(--alignItems, center);
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, #{min(100%, $min)} * 1rem), 1fr));
+  grid-column-gap: #{$gapCol * 1rem};
+  row-gap: #{$gapRow * 1rem};
+  white-space: normal;
+}
+
+// Column
+@mixin colConfig ($i) {
+  &-#{$i} {
+    width: 100%;
+
+    @include media-queries-up(md) {
+      width: 50%;
+    }
+
+    @include media-queries-up(lg) {
+      width: calc((10% * $i) - 1rem);
+    }
+  }
+}
+
+// Clamp
+@mixin clamp($selector, $min, $max) {
+  #{$selector}: clamp(#{$min}rem, calc(#{$min}rem + (#{($max - $min)} * var(--calc-width))), #{$max}rem);
+}

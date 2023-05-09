@@ -1,0 +1,27 @@
+// Breakpoints
+
+$breakpoints: (
+  xs: 0,
+  sm: 599px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+); $breakpoints: map-merge($breakpoints, $breakpoints);
+
+// Wraps
+
+$wraps: (
+  'S': 56.25rem,
+  'M': 75rem,
+  'L': 100rem,
+  '': 100rem
+); $wraps: map-merge($wraps, $wraps);
+
+:root {
+  --calc-width: calc((100vw - 30rem) / (75 - 30));
+
+  @each $wrap-name, $value in $wraps {
+    --wrap#{$wrap-name}: #{$value};
+  }
+}
