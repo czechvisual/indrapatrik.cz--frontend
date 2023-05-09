@@ -20,7 +20,7 @@ const sass = gulpSass(sassLib);
 
 // Asstes
 function assets() {
-  return gulp.src('assets/img/*.{jpg,jpeg,png,gif,svg}')
+  return gulp.src('assets/img/*.{jpg,jpeg,png,gif,webp,svg}')
     .pipe(imagemin())
     .pipe(gulp.dest('public/assets/img'));
 }
