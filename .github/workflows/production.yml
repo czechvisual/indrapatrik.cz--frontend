@@ -22,7 +22,6 @@ jobs:
         port: 21
         local-dir: ./public/
         server-dir: indrafinance.cz/
-        dangerous-clean-slate: true
         state-name: .production.json
         exclude: |
           **/.git*/**
