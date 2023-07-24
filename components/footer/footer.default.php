@@ -6,7 +6,9 @@
             <span>
                 <?= $createdBy ?>
 
-                <img src="<?= $logo ?>">
+                <a href="https://patrikvadura.cz/">
+                  <img src="<?= $logo ?>">
+                </a>
             </span>
         </div>
     </div>
